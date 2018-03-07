@@ -1,23 +1,33 @@
-import React from 'react';
-const Library = () => (
-  <section className='library'>
-  <h1 className="hero-title"> Turn the music up!</h1>
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import albumData from './../data/albums';
 
-    <section className="selling-points">
-      <div className="point">
-        <h2 className="point-title">Choose your music!></h2>
-        <p className="point-description">The world is full of music; why should you have to listen to music that someone else chose?</p>
-      </div>
-      <div className="point">
-         <h2 className="point-title">Unlimited, steaming, ad-free</h2>
-         <p className="point-description">No arbitrary limits. No distractions.</p>
-      </div>
-      <div className="point">
-        <h2 className="point-title">Mobile enabled</h2>
-        <p className="point-description">Listen to your music on the go.This streaming service is available on all mobile platforms.</p>
-      </div>
-    </section>
-  </section>
-);
+class Library extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      albums: albumData
+    };
+  }
+
+
+  render() {
+    return (
+      <section className='library'>
+        {
+          this.state.albums.map( (album, index) =>
+            <Link to={`/album/${album.slug}`} key={index}>
+              <img src={album.albumCover} alt={album.title} />
+              <div>{album.title}</div>
+              <div>{album.artist}</div>
+              <div>{album.songs.length} songs</div>
+            </Link>
+          )
+        }
+      </section>
+    );
+  }
+}
 
 export default Library;
