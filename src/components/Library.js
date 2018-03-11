@@ -1,3 +1,11 @@
+import React, {component} from 'react';
+
+class Library extends Component {
+  render() {
+    return(
+      <section className='library'>
+        Library will go here
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import albumData from './../data/albums';
