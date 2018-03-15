@@ -10,6 +10,15 @@ class Album extends Component {
       return album.slug === this.props.match.parms.slug
     });
 
+    const song-row = this.state.album.songs.map(song, index) =>
+      const song-details = {};
+      song-details[song[i]] = number;
+      song-details[song.title] = song.title;
+      song-details[song.duration] = duration/60;
+      return song-row;
+
+
+
     this.state = {
       album : album
     };
@@ -33,6 +42,11 @@ class Album extends Component {
             <col id="song-duration-column" />
           </colgroup>
           <tbody>
+            <tr>
+              <td className="song-number">{album.songs.index}</td>
+              <td className="song-title">{album.songs.title}</td>
+              <td className="song-duration">{album.songs.duration}</td>
+            </tr>
           </tbody>
         </table>
       </section>
