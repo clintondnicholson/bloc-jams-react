@@ -6,9 +6,8 @@ class Album extends Component {
   constructor(props){
     super(props);
 
-
     const album = albumData.find( album => {
-      return album.slug === this.props.match.parms.slug
+      return album.slug === this.props.match.params.slug
     });
 
     this.state = {
@@ -20,7 +19,7 @@ class Album extends Component {
     return(
       <section className='album'>
         <section id="album-info">
-          <img id="album-cover-art" src={this.state.album.albumCover} />
+          <img id="album-cover-art" alt="album art" src={this.state.album.albumCover} />
           <div className="album-details">
             <h1 id="album-title">{this.state.album.title}</h1>
             <h2 className="artist">{this.state.album.artist}</h2>
@@ -37,11 +36,11 @@ class Album extends Component {
             <tr>
               <section className="song-row">
                 {
-                  this.state.album.songs.map( (album, song, index)  =>
-                    <Link to={`/album/${album.slug}`}key={index}>
-                      <td>{album.songs.index}</td>
-                      <td>{album.songs.title}</td>
-                      <td>{album.songs.duration}</td>
+                  this.state.album.songs.map( (album, song)  =>
+                    <Link to={`/album/${album.slug}`}>
+                      <td>{song + 1}</td>
+                      <td>{album.title}</td>
+                      <td>{album.duration/ 60}</td>
                     </Link>
                   )
                 }
