@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import albumData from './../data/albums';
 
 class Album extends Component {
   constructor(props){
     super(props);
 
-
     const album = albumData.find( album => {
-      return album.slug === this.props.match.parms.slug
+      return album.slug === this.props.match.params.slug
     });
 
     this.state = {
@@ -19,7 +19,7 @@ class Album extends Component {
     return(
       <section className='album'>
         <section id="album-info">
-          <img id="album-cover-art" src={this.state.album.albumCover} />
+          <img id="album-cover-art" alt="album art" src={this.state.album.albumCover} />
           <div className="album-details">
             <h1 id="album-title">{this.state.album.title}</h1>
             <h2 className="artist">{this.state.album.artist}</h2>
@@ -33,6 +33,19 @@ class Album extends Component {
             <col id="song-duration-column" />
           </colgroup>
           <tbody>
+            <tr>
+              <section className="song-row">
+                {
+                  this.state.album.songs.map( (album, song)  =>
+                    <Link to={`/album/${album.slug}`}>
+                      <td>{song + 1}</td>
+                      <td>{album.title}</td>
+                      <td>{album.duration/ 60}</td>
+                    </Link>
+                  )
+                }
+              </section>
+            </tr>
           </tbody>
         </table>
       </section>
