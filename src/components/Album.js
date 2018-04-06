@@ -18,7 +18,7 @@ class Album extends Component {
 
     this.audioElement = document.createElement('audio');
     this.audioElement.src = album.songs[0].audioSrc;
-   }
+    };
 
     play() {
       this.audioElement.play();
@@ -37,19 +37,13 @@ class Album extends Component {
 
    handleSongClick(song) {
      const isSameSong = this.state.currentSong === song;
+
      if (this.state.isPlaying && isSameSong) {
-       this.pause();
-     } else {
-       if (!isSameSong) { this.setSong(song); }
-       this.play();
+         this.pause();
+       } else {
+         if (!isSameSong) { this.setSong(song); }
+         this.play();
      }
-  }
-    handlePrevClick() {
-      const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
-      const newIndex = Math.max(0, currentIndex - 1);
-      const newSong = this.state.album.songs[newIndex];
-      this.setSong(newSong);
-      this.play(newSong);
     }
 
   render() {
@@ -72,7 +66,7 @@ class Album extends Component {
           <tbody>
             {
               this.state.album.songs.map( (song, index)  =>
-                <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
+                <tr className="song" key={index} onClick={() => this.handleSongClick(song)}>
                   <td className="song-number">{index + 1}</td>
                   <td className="ion-ios-play"></td>
                   <td className="ion-ios-pause"></td>
