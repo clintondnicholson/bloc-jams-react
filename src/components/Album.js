@@ -13,6 +13,8 @@ class Album extends Component {
     this.state = {
       album : album,
       currentSong: album.songs[0],
+      currentTime: 0,
+      duration: album.songs[0].duration,
       isPlaying: false
     };
 
@@ -46,9 +48,18 @@ class Album extends Component {
      }
     }
 
+    handlePrevClick() {
+      const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
+      const newIndex = Math.max(0, currentIndex - 1);
+      const newSong = this.state.album.songs[newIndex];
+      this.setSong(newSong);
+      this.play(newSong);
+    }
+
     handleNextClick() {
       const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
-      const newIndex = Math.max(0, currentIndex + 1);
+      const numberOfSongs = this.state.album.songs.length - 1
+      const newIndex = Math.min(numberOfSongs, currentIndex + 1);
       const newSong = this.state.album.songs[newIndex];
       this.setSong(newSong);
       this.play(newSong);
