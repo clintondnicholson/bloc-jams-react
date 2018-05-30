@@ -138,7 +138,7 @@ class Album extends Component {
                   <td className="ion-ios-play"></td>
                   <td className="ion-ios-pause"></td>
                   <td className="song-title">{song.title}</td>
-                  <td className="song-duration">{song.duration}</td>
+                  <td className="song-duration">{this.formatTime(song.duration)} </td>
                 </tr>
               )
             }
