@@ -10,8 +10,8 @@
 
 .nav-item{
   color: white;
-  padding-left: 30px;
   font-size: 1.25rem;
+  padding-left: 30px;
 }
 
 .nav-item:hover{
@@ -32,6 +32,35 @@ a:hover {
   color: white;
 }
 
+table {
+  color: #4a4c55;
+  margin-top: 8%;
+  width:100%;
+}
+
+tr:hover {
+  background-color: #2a2c33;
+  color: white;
+}
+
+table tr:hover td:first-child {
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+}
+table tr:hover td:last-child {
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+table tr td{
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+table tr td:last-child {
+  padding-right: 5%
+}
+
 .navbar {
   background: #232526;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #10121a, #232526);  /* Chrome 10-25, Safari 5.1-6 */
@@ -49,13 +78,13 @@ a:hover {
 }
 
 .display-1 {
-  position: absolute;
-  top: 15%;
-  left: 65%;
   color:white;
   font-family: 'Exo', Helvetica, sans-serif ;
-  text-align: left;
+  left: 65%;
   line-height: 5rem;
+  position: absolute;
+  text-align: left;
+  top: 15%;
 }
 
 .selling-points {
@@ -69,13 +98,31 @@ a:hover {
 }
 
 .point-title {
-  font-family: 'Raleway',sans-serif;
   color: white;
+  font-family: 'Raleway',sans-serif;
   margin-top: 10px;
 }
 
 .point-description {
+  color: white;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
-  color: white;
+}
+
+.album-details {
+  margin-top: 5%;
+}
+
+.song-title {
+  text-align: left;
+}
+
+.song-duration {
+  border-bottom-right-radius: 100%;
+  border-top-right-radius: 100%;
+  width:75px;
+}
+
+.ion-ios-play {
+  color: #FF512F;
 }
