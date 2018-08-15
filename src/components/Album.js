@@ -107,26 +107,16 @@ class Album extends Component {
 
   render() {
     return(
-<<<<<<< HEAD
       <section className= 'album'>
         <div className= "container">
           <div className= "row">
               <img src={this.state.album.albumCover} className= "col-6 album-cover-art" alt="album art" />
             <div className="col-6 album-info">
-=======
-      <section className='album'>
-        <div className="container">
-          <div className="row">
-            <div className="col-6">
-            <section id="album-info">
-              <img id="album-cover-art" alt="album art" src={this.state.album.albumCover} />
->>>>>>> c129ddb088bf5f618118c2bd0ca90cb0b6fa5daf
               <div className="album-details">
                 <h1 id="album-title">{this.state.album.title}</h1>
                 <h2 className="artist">{this.state.album.artist}</h2>
                 <div id="release-info">{this.state.album.releaseInfo}</div>
               </div>
-<<<<<<< HEAD
               <table className="col-12">
                 <tbody>
                   {
@@ -143,30 +133,13 @@ class Album extends Component {
                 </tbody>
               </table>
             </div>
-=======
-            </section>
-            </div>
             <table className="col-6" id="song-list">
               <colgroup>
                 <col id="song-number-column" />
                 <col id="song-title-column" />
                 <col id="song-duration-column" />
               </colgroup>
-              <tbody>
-                {
-                  this.state.album.songs.map( (song, index)  =>
-                    <tr className="song" key={index} onClick={() => this.handleSongClick(song)}>
-                      <td className="song-number">{index + 1}</td>
-                      <td className="ion-ios-play"></td>
-                      <td className="ion-ios-pause"></td>
-                      <td className="song-title">{song.title}</td>
-                      <td className="song-duration">{this.formatTime(song.duration)} </td>
-                    </tr>
-                  )
-                }
-              </tbody>
             </table>
->>>>>>> c129ddb088bf5f618118c2bd0ca90cb0b6fa5daf
           </div>
         </div>
         <PlayerBar
