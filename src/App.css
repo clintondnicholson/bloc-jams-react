@@ -23,13 +23,16 @@ body {
   font-family: Raleway, sans-serif;
   font-size: 1.25rem;
 }
+
 a {
   color: white;
   font-family: Raleway, sans-serif;
+  text-decoration: none;
 }
 
 a:hover {
   color: white;
+  text-decoration: none;
 }
 
 table {
@@ -59,6 +62,23 @@ table tr td{
 
 table tr td:last-child {
   padding-right: 5%
+}
+
+button {
+  background-color: transparent;
+  border-radius: 50%;
+  width:50px;
+  height:50px;
+  border:none;
+  color: white;
+}
+
+link{
+  text-decoration: none;
+}
+
+.Player-Bar {
+  display: block;
 }
 
 .navbar {
@@ -109,6 +129,16 @@ table tr td:last-child {
   font-weight: 300;
 }
 
+.album-title {
+  font-size: 2rem;
+  padding:0;
+  text-decoration: none;
+}
+
+.album-title:hover {
+  text-decoration: none;
+}
+
 .album-details {
   margin-top: 5%;
 }
@@ -124,5 +154,83 @@ table tr td:last-child {
 }
 
 .ion-ios-play {
-  color: #FF512F;
+  color: #F09819;
+}
+
+.seekbar {
+  color: #FF512F
+}
+
+.slider {
+    width: 100%;
+    height: 15px;
+    color: #FF512F;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    display: none;
+}
+
+.slider::-moz-range-thumb {
+    display:none;
+}
+
+.time-control {
+  float: right;
+  padding:.5% 2%;
+}
+
+.time-control p{
+  display: inline;
+}
+
+.total-time {
+  color:grey
+}
+
+
+.volume-control {
+  float: left;
+  padding:.5% 2%;
+}
+
+.play-pause {
+  background-color: linear-gradient (to-right, red, yellow);
+  border-radius: 50%;
+}
+
+.play-pause{
+ /* background-color: #ff9a9a;
+ background-image: -webkit-gradient(linear, left top, left bottom, from(#ff9a9a), to(#ff4040));
+ background-image: -webkit-linear-gradient(top, #ff9a9a, #ff4040);
+ background-image: -moz-linear-gradient(top, #ff9a9a, #ff4040);
+ background-image: -ms-linear-gradient(top, #ff9a9a, #ff4040);
+ background-image: -o-linear-gradient(top, #ff9a9a, #ff4040);
+ background-image: linear-gradient(to bottom, #ff9a9a, #ff4040);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ff9a9a, endColorstr=#ff4040);
+ border-radius: 50%; */
+
+background: #F09819;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #EDDE5D, #F09819);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #EDDE5D, #F09819); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.play-pause:hover{
+ background-color: #ff6767; background-image: -webkit-gradient(linear, left top, left bottom, from(#ff6767), to(#ff0d0d));
+ background-image: -webkit-linear-gradient(top, #ff6767, #ff0d0d);
+ background-image: -moz-linear-gradient(top, #ff6767, #ff0d0d);
+ background-image: -ms-linear-gradient(top, #ff6767, #ff0d0d);
+ background-image: -o-linear-gradient(top, #ff6767, #ff0d0d);
+ background-image: linear-gradient(to bottom, #ff6767, #ff0d0d);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ff6767, endColorstr=#ff0d0d);
+}
+
+.buttons {
+  float:none;
+  padding:2% 2%;
 }

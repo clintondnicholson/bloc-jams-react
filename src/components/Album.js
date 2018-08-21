@@ -133,13 +133,6 @@ class Album extends Component {
                 </tbody>
               </table>
             </div>
-            <table className="col-6" id="song-list">
-              <colgroup>
-                <col id="song-number-column" />
-                <col id="song-title-column" />
-                <col id="song-duration-column" />
-              </colgroup>
-            </table>
           </div>
         </div>
         <PlayerBar
